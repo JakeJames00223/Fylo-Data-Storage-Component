@@ -266,3 +266,18 @@ body {
     }
   }
 }
+@media (max-height:700px){
+  .message{
+    top: 79%;
+  }
+}
+@media (max-height:600px){
+  .message{
+    top: 85%;
+  }
+}
+@media (max-height:500px){
+  .message{
+    top: 87%;
+  }
+}
