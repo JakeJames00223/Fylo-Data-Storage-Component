@@ -44,14 +44,16 @@ body {
   padding: 3rem 6rem 3rem 3rem;
   border-radius: 0.6rem;
   border-top-right-radius: 6rem;
-  animation: fylo-slide 2s;
+  animation: fylo-slide 3s;
   margin-left: 10rem;
+  perspective: 1000px;
 }
 .buttons {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
   width: 16vw;
+  transform-style: preserve-3d;
 }
 
 .buttons img {
@@ -59,11 +61,15 @@ body {
   background-color: var(--color-Very-Dark-Blue);
   border-radius: 0.6rem;
   transition: transform 0.3s ease, filter 0.3s;
+  transform: rotateY(180deg) ;
+  transition: transform 0.6s;
+
 }
 .buttons :hover {
   filter: brightness(4);
   transform: scale(1.2);
 }
+
 @keyframes fylo-slide {
   from {
     transform: translateX(-20rem);
@@ -79,7 +85,7 @@ body {
   background-color: var(--color-neutral-Dark-Blue);
   padding: 2.3rem;
   border-radius: 0.6rem;
-  animation: usage-slide 2s;
+  animation: usage-slide 3s;
   margin-right: 5rem;
 }
 @keyframes usage-slide {
@@ -97,6 +103,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  font-weight: var(--font-bold);
 }
 /*|| Sliding bar ||*/
 .bar {
@@ -155,7 +162,7 @@ body {
   border-top-left-radius: 1rem;
   color: var(--color-Very-Dark-Blue);
   align-items: center;
-  animation: usage-slide 2s;
+  animation: usage-slide 3s;
 }
 .message p {
   font-weight: var(--font-bold);
@@ -205,10 +212,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    height: 100vh;
   }
   .fylo {
-    padding: 1.5rem 21% 1.5rem 1.5rem;
-    animation: fylo-slide 2s;
+    padding: 2.5rem 21% 2.5rem 2.5rem;
+    animation: fylo-slide 3s;
     margin: 0;
     width: 20rem;
   }
@@ -218,33 +226,34 @@ body {
   }
   @keyframes fylo-slide {
     from {
-      transform: translateX(-10rem);
+      transform: translate(10rem , -10rem);
       opacity: 0;
     }
     to {
-      transform: translateX(0px);
+      transform: translate(0px);
       opacity: 1;
     }
   }
   .usage {
     padding: 1.7rem;
-    animation: usage-slide 2s;
+    animation: usage-slide 3s;
     margin: 0;
     width: 20rem;
   }
   .bar {
     width: 16.5rem;
+    margin: 1.5rem 0;
   }
   .text {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
   }
   @keyframes usage-slide {
     from {
-      transform: translateX(10rem);
+      transform: translate(10rem ,10rem);
       opacity: 0;
     }
     to {
-      transform: translateX(0px);
+      transform: translate(0px);
       opacity: 1;
     }
   }
@@ -253,31 +262,18 @@ body {
     clip-path: none;
     border-radius: 1rem;
     height: 4.4rem;
-    top: 75%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
   @keyframes message-slide {
     from {
       opacity: 0;
+      translate: -10rem 10rem;
     }
     to {
       opacity: 1;
+      translate: 0;
     }
-  }
-}
-@media (max-height:700px){
-  .message{
-    top: 79%;
-  }
-}
-@media (max-height:600px){
-  .message{
-    top: 85%;
-  }
-}
-@media (max-height:500px){
-  .message{
-    top: 87%;
   }
 }
